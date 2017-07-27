@@ -2,6 +2,8 @@
 
 Dump PHP Array from Ruby's Hash or Array.
 
+[![Build Status](https://travis-ci.org/tsmsogn/to_php_array.svg?branch=master)](https://travis-ci.org/tsmsogn/to_php_array)
+
 ## Installation
 
 Add this line to your application's Gemfile:
