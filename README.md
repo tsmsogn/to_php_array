@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 require 'to_php_array'
 
 array = [1, 2]
