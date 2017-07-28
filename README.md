@@ -22,12 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
+### ToPhpArray.dump
+
 ```ruby
-require 'to_php_array'
-
-array = [1, 2]
-ToPhpArray.dump(array) #=> array(1, 2)
-
 array = [
   'foo',
   3,
@@ -43,58 +40,11 @@ hash = {
   }
 }
 ToPhpArray.dump(hash) #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
+```
 
-array = [1, 2]
-ToPhpArray.dump(array, { :wrap => true }) #=>
-# array(
-#     1,
-#     2
-# )
+### ToPhpArray#to_php_array
 
-array = [
-  'foo',
-  3,
-  [4, 5],
-]
-ToPhpArray.dump(array, { :wrap => true }) #=>
-# array(
-#     'foo',
-#     3,
-#     array(
-#         4,
-#         5
-#     )
-# )
-
-hash = {
-  :foo => 1,
-  2 => 3,
-  'bar' => {
-    4 => 5,
-    'baz' => {
-      6 => 7
-    }
-  }
-}
-ToPhpArray.dump(hash, { :wrap => true }) #=>
-# array(
-#     'foo' => 1,
-#     2 => 3,
-#     'bar' => array(
-#         4 => 5,
-#         'baz' => array(
-#             6 => 7
-#         )
-#     )
-# )
-
-array = [1, 2]
-ToPhpArray.dump(array, { :wrap => true, :indent_size => 2 }) #=>
-# array(
-#   1,
-#   2
-# )
-
+```ruby
 array = [1, 2]
 array.extend(ToPhpArray)
 array.to_php_array #=> array(1, 2)
@@ -108,6 +58,30 @@ hash = {
 }
 hash.extend(ToPhpArray)
 hash.to_php_array #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
+```
+
+### Options
+
+- wrap
+
+```ruby
+array = [1, 2]
+ToPhpArray.dump(array, { :wrap => true }) #=>
+# array(
+#     1,
+#     2
+# )
+```
+
+- indent_size
+
+```ruby
+array = [1, 2]
+ToPhpArray.dump(array, { :wrap => true, :indent_size => 2 }) #=>
+# array(
+#   1,
+#   2
+# )
 ```
 
 ## Development
