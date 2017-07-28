@@ -30,7 +30,7 @@ array = [
   3,
   [4, 5]
 ]
-ToPhpArray.dump(array) #=> array('foo', 3, array(4, 5))
+puts ToPhpArray.dump(array) #=> array('foo', 3, array(4, 5))
 
 hash = {
   :foo => 1,
@@ -39,7 +39,7 @@ hash = {
     4 => 5
   }
 }
-ToPhpArray.dump(hash) #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
+puts ToPhpArray.dump(hash) #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
 ```
 
 ### ToPhpArray#to_php_array
@@ -47,7 +47,7 @@ ToPhpArray.dump(hash) #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
 ```ruby
 array = [1, 2]
 array.extend(ToPhpArray)
-array.to_php_array #=> array(1, 2)
+puts array.to_php_array #=> array(1, 2)
 
 hash = {
   :foo => 1,
@@ -57,7 +57,7 @@ hash = {
   }
 }
 hash.extend(ToPhpArray)
-hash.to_php_array #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
+puts hash.to_php_array #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
 ```
 
 ### Options
@@ -66,7 +66,7 @@ hash.to_php_array #=> array('foo' => 1, 2 => 3, 'bar' => array(4 => 5))
 
 ```ruby
 array = [1, 2]
-ToPhpArray.dump(array, { :wrap => true }) #=>
+puts ToPhpArray.dump(array, { :wrap => true }) #=>
 # array(
 #     1,
 #     2
@@ -77,7 +77,7 @@ ToPhpArray.dump(array, { :wrap => true }) #=>
 
 ```ruby
 array = [1, 2]
-ToPhpArray.dump(array, { :wrap => true, :indent_size => 2 }) #=>
+puts ToPhpArray.dump(array, { :wrap => true, :indent_size => 2 }) #=>
 # array(
 #   1,
 #   2
